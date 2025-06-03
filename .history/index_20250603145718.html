@@ -34,367 +34,7 @@
           #000000 100%
         );
       }
-      /* Add this CSS to your existing style section - paste it right after the .bg-animation styles */
-      /* Space stars background */
-      .space-stars {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: black;
-        overflow: hidden;
-        z-index: -2;
-      }
 
-      .star {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: white;
-        border-radius: 50%;
-        opacity: 0.8;
-        animation: moveStar 10s linear infinite;
-      }
-
-      @keyframes moveStar {
-        0% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(100vh);
-          opacity: 0;
-        }
-      }
-
-      /* Space jet fighter */
-      .jet {
-        position: absolute;
-        width: 40px;
-        height: 20px;
-        background: linear-gradient(90deg, #ff0044, #ff6600);
-        clip-path: polygon(0 0, 100% 50%, 0 100%);
-        animation: flyJet 8s linear infinite;
-        z-index: 1;
-      }
-
-      @keyframes flyJet {
-        0% {
-          left: -50px;
-          top: calc(100% * var(--rand-top));
-          transform: rotate(0deg);
-        }
-        100% {
-          left: 110%;
-          top: calc(100% * var(--rand-top));
-          transform: rotate(0deg);
-        }
-      }
-
-      /* Floating Shapes Container */
-      .floating-shapes {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        pointer-events: none;
-      }
-
-      /* Base Shape Styles */
-      .shape {
-        position: absolute;
-        opacity: 0.6;
-        animation: float 15s linear infinite;
-        z-index: 1;
-      }
-
-      /* Drone Styles */
-      .drone {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(45deg, #4a90e2, #357abd);
-        border-radius: 50% 50% 0 0;
-        position: relative;
-        animation: float 12s linear infinite, hover 3s ease-in-out infinite;
-      }
-
-      .drone::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 8px;
-        background: #e74c3c;
-        border-radius: 20px;
-        box-shadow: -20px -5px 0 -2px #e74c3c, 20px -5px 0 -2px #e74c3c,
-          -20px 5px 0 -2px #e74c3c, 20px 5px 0 -2px #e74c3c;
-      }
-
-      .drone::after {
-        content: "🚁";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
-        animation: rotate 2s linear infinite;
-      }
-
-      /* Robot Styles */
-      .robot-car {
-        width: 80px;
-        height: 50px;
-        background: linear-gradient(45deg, #e74c3c, #c0392b);
-        border-radius: 10px;
-        position: relative;
-        animation: float 18s linear infinite, bounce 2s ease-in-out infinite;
-      }
-
-      .robot-car::before {
-        content: "";
-        position: absolute;
-        bottom: -15px;
-        left: 10px;
-        width: 15px;
-        height: 15px;
-        background: #333;
-        border-radius: 50%;
-        box-shadow: 45px 0 0 #333;
-      }
-
-      .robot-car::after {
-        content: "🤖";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 20px;
-      }
-
-      /* Circuit Pattern */
-      .circuit-pattern {
-        width: 100px;
-        height: 100px;
-        background: transparent;
-        border: 2px solid rgba(74, 144, 226, 0.4);
-        border-radius: 10px;
-        position: relative;
-        animation: float 20s linear infinite, pulse 4s ease-in-out infinite;
-      }
-
-      .circuit-pattern::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 60%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #4a90e2, transparent);
-        animation: circuit-flow 2s ease-in-out infinite;
-      }
-
-      .circuit-pattern::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(90deg);
-        width: 60%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #e74c3c, transparent);
-        animation: circuit-flow 2s ease-in-out infinite 1s;
-      }
-
-      /* Flying Robot */
-      .flying-robot {
-        width: 70px;
-        height: 70px;
-        background: linear-gradient(45deg, #9b59b6, #8e44ad);
-        border-radius: 15px;
-        position: relative;
-        animation: float 14s linear infinite, fly 4s ease-in-out infinite;
-      }
-
-      .flying-robot::before {
-        content: "";
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        right: -5px;
-        bottom: -5px;
-        border: 2px solid rgba(155, 89, 182, 0.3);
-        border-radius: 20px;
-        animation: radar 3s linear infinite;
-      }
-
-      .flying-robot::after {
-        content: "🛸";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
-        animation: wobble 2s ease-in-out infinite;
-      }
-
-      /* Satellite */
-      .satellite {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(45deg, #f39c12, #e67e22);
-        transform: rotate(45deg);
-        position: relative;
-        animation: float 16s linear infinite,
-          satellite-rotate 8s linear infinite;
-      }
-
-      .satellite::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 30px;
-        height: 4px;
-        background: #34495e;
-        box-shadow: 0 20px 0 #34495e;
-      }
-
-      .satellite::after {
-        content: "📡";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-        font-size: 20px;
-      }
-
-      /* Animation Keyframes */
-      @keyframes float {
-        0% {
-          transform: translateX(-100px);
-        }
-        100% {
-          transform: translateX(calc(100vw + 100px));
-        }
-      }
-
-      @keyframes hover {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-      }
-
-      @keyframes bounce {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 0.6;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 1;
-          transform: scale(1.1);
-        }
-      }
-
-      @keyframes rotate {
-        0% {
-          transform: translate(-50%, -50%) rotate(0deg);
-        }
-        100% {
-          transform: translate(-50%, -50%) rotate(360deg);
-        }
-      }
-
-      @keyframes circuit-flow {
-        0%,
-        100% {
-          opacity: 0.3;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fly {
-        0%,
-        100% {
-          transform: translateY(0px) rotate(0deg);
-        }
-        25% {
-          transform: translateY(-15px) rotate(-5deg);
-        }
-        75% {
-          transform: translateY(15px) rotate(5deg);
-        }
-      }
-
-      @keyframes radar {
-        0% {
-          transform: scale(1) rotate(0deg);
-          opacity: 1;
-        }
-        100% {
-          transform: scale(1.5) rotate(360deg);
-          opacity: 0;
-        }
-      }
-
-      @keyframes wobble {
-        0%,
-        100% {
-          transform: translate(-50%, -50%) rotate(0deg);
-        }
-        25% {
-          transform: translate(-50%, -50%) rotate(-2deg);
-        }
-        75% {
-          transform: translate(-50%, -50%) rotate(2deg);
-        }
-      }
-
-      @keyframes satellite-rotate {
-        0% {
-          transform: rotate(45deg);
-        }
-        100% {
-          transform: rotate(405deg);
-        }
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .drone,
-        .robot-car,
-        .flying-robot,
-        .satellite {
-          transform: scale(0.7);
-        }
-
-        .circuit-pattern {
-          transform: scale(0.6);
-        }
-      }
       /* Navigation with darker theme */
       nav {
         position: fixed;
@@ -1321,8 +961,6 @@
   <body>
     <!-- Background Animation -->
     <div class="bg-animation">
-      <div class="space-stars"></div>
-
       <div class="floating-shapes">
         <div
           class="robot-car shape"
@@ -1704,6 +1342,13 @@
                 <span class="btn-icon">📄</span>
                 View Certificate
               </a>
+              <button
+                class="btn-certificate btn-verify"
+                onclick="verifyCertificate('cert-001')"
+              >
+                <span class="btn-icon">✓</span>
+                Verify
+              </button>
             </div>
           </div>
 
@@ -1726,6 +1371,13 @@
                 <span class="btn-icon">📄</span>
                 View Certificate
               </a>
+              <button
+                class="btn-certificate btn-verify"
+                onclick="verifyCertificate('cert-002')"
+              >
+                <span class="btn-icon">✓</span>
+                Verify
+              </button>
             </div>
           </div>
 
@@ -1747,6 +1399,13 @@
                 <span class="btn-icon">📄</span>
                 View Certificate
               </a>
+              <button
+                class="btn-certificate btn-verify"
+                onclick="verifyCertificate('cert-003')"
+              >
+                <span class="btn-icon">✓</span>
+                Verify
+              </button>
             </div>
           </div>
 
@@ -1768,6 +1427,13 @@
                 <span class="btn-icon">📄</span>
                 View Certificate
               </a>
+              <button
+                class="btn-certificate btn-verify"
+                onclick="verifyCertificate('cert-004')"
+              >
+                <span class="btn-icon">✓</span>
+                Verify
+              </button>
             </div>
           </div>
 
@@ -1789,6 +1455,13 @@
                 <span class="btn-icon">📄</span>
                 View Certificate
               </a>
+              <button
+                class="btn-certificate btn-verify"
+                onclick="verifyCertificate('cert-005')"
+              >
+                <span class="btn-icon">✓</span>
+                Verify
+              </button>
             </div>
           </div>
 
@@ -1810,6 +1483,13 @@
                 <span class="btn-icon">📄</span>
                 View Certificate
               </a>
+              <button
+                class="btn-certificate btn-verify"
+                onclick="verifyCertificate('cert-006')"
+              >
+                <span class="btn-icon">✓</span>
+                Verify
+              </button>
             </div>
           </div>
         </div>
@@ -1928,31 +1608,6 @@
     </section>
 
     <script>
-      // Create space stars dynamically
-      for (let i = 0; i < 150; i++) {
-        const star = document.createElement("div");
-        star.className = "star";
-        star.style.top = Math.random() * window.innerHeight + "px";
-        star.style.left = Math.random() * window.innerWidth + "px";
-        star.style.animationDuration = Math.random() * 5 + 5 + "s";
-        document.querySelector(".space-stars").appendChild(star);
-      }
-
-      // Create space jets dynamically
-      function createJet() {
-        const jet = document.createElement("div");
-        jet.className = "jet";
-        jet.style.setProperty("--rand-top", Math.random());
-        document.querySelector(".space-stars").appendChild(jet);
-
-        setTimeout(() => {
-          if (jet.parentNode) jet.parentNode.removeChild(jet);
-        }, 8000);
-      }
-
-      // Launch new jets every few seconds
-      setInterval(createJet, 4000);
-
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
