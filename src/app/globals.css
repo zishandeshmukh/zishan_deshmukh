@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --background: #030712;
   --foreground: #ffffff;
@@ -10,9 +16,18 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: #030712 !important;
+  background-color: #030712 !important;
   color: var(--foreground);
   font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Force dark background on all major containers */
+#__next,
+main {
+  background: #030712;
+  min-height: 100vh;
 }
 
 /* Slow spin animation for profile ring */
@@ -56,4 +71,9 @@ body {
 /* Font families */
 .font-mono {
   font-family: 'JetBrains Mono', monospace;
+}
+
+/* Fix for canvas/3D background */
+canvas {
+  display: block;
 }
